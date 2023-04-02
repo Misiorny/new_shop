@@ -1,18 +1,25 @@
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { number } from "prop-types";
+import { ReactNode } from "react";
+import { Main } from "../components/Main";
+import { Product } from "../components/Product";
+
+const DATA = {
+  description:
+    "Percipitornare graeci omnesque definiebas. Omittanturrecteque idque luptatum aperiri hac.Laoreetturpis maluisset scripserit viverra veri putent conubiaitu peratoribus.",
+  thumbnailUrl: "https://picsum.photos/id/1060/536/354",
+  thumbnailAlt: "Barista nalewający kawę",
+  rating: 4.5,
+};
 
 const Home = () => {
   return (
-    <div className="flex flex-col bg-teal-100 min-h-screen">
+    <div className="flex flex-col  min-h-screen">
       <Header />
-      <main className="flex-grow max-w-2xl mx-auto grid p-6 gap-6 sm:grid-cols-2 ">
-        <img src="https://picsum.photos/id/1060/536/354" alt="losowy obrazek" />
-        <p>
-          Percipitornare graeci omnesque definiebas. Omittanturrecteque idque
-          luptatum aperiri hac. Laoreetturpis maluisset scripserit viverra veri
-          putent conubia vituperatoribus.
-        </p>
-      </main>
+      <Main>
+        <Product data={DATA} />
+      </Main>
       <Footer />
     </div>
   );
